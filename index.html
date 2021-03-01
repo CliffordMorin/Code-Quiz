@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Code Quiz</title>
+</head>
+
+<body>
+    <header style="background-color: aqua;">
+        <strong><a href="highscores.html">High Scores</a></strong>
+        <span class="timer">Time: <span id="timer">0</span></span>
+    </header>
+
+    <!-- Home -->
+    <main>
+        <div class="container" id="home">
+            <div class="home-container">
+                <h1>Javascript Quiz!</h1><br>
+                <h5><p>Try to answer these questions about Javascript in 120 seconds... <br></h5>
+                    <b><i>NOTE:</i> <br>
+                    </b>When you answer incorrectly you'll lose 20 seconds!</p> <br>
+                <button type="button" id="start-btn" class="btn start-btn">START QUIZ</button>
+            </div>
+        </div>
+
+        <!-- Question & Answer -->
+        <div class="container hide" id="quiz">
+            <div id="question-container">
+                <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button type="button" class="btn">Answer 1</button>
+                    <button type="button" class="btn">Answer 2</button>
+                    <button type="button" class="btn">Answer 3</button>
+                    <button type="button" class="btn">Answer 4</button>
+                </div>
+            </div>
+            <div class="controls">
+                <button type="button" id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
+        </div>
+
+        <!-- Finished Screen -->
+        <div class="container hide" id="submit-score">
+            <div class="row justify-content-center">
+                <div>
+                    <h2>Finished!</h2>
+                    <p id="user-score"> </p>
+                    <form class="form-group">
+                        <label for="new-score">Enter your name: </label>
+                        <input type="text" id="userName">
+                        <button type="button" class="btn submitBtn">Submit High Score</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="questions.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
