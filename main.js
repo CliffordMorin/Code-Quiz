@@ -62,6 +62,7 @@ function showQuestion(question) {
 function resetState() {
     clearStatusClass(document.querySelector('main'))
     //add when taken to finished section resets 
+    //add restartBtn here to reset to home screen
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild

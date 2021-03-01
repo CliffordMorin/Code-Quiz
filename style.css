@@ -10,11 +10,14 @@
 }
 
 header {
-    /* need to make the body not effect the header */
-}
-
-.timer {
-    float: right;
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 50%);
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+    width: 100vw;
 }
 
 
