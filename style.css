@@ -9,6 +9,7 @@
     --hue-correct: 145;
 }
 
+/* Header section */
 header {
     --hue: var(--hue-neutral);
     background-color: hsl(var(--hue), 100%, 50%);
@@ -20,7 +21,23 @@ header {
     width: 100vw;
 }
 
+/* Home card */
+#home {
+    width: 500px;
+    max-width: 50%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
 
+.start-btn {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+/* Main section */
 main {
     --hue: var(--hue-neutral);
     padding: 0;
@@ -50,7 +67,7 @@ main.wrong {
     box-shadow: 0 0 10px 2px;
 }
 
-/* question buttons */
+/* Question buttons */
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -95,6 +112,13 @@ main.wrong {
 
 .hide {
     display: none;
+}
+
+/* Submit Score Card*/
+
+#submit-score {
+    width: 500px;
+    max-width: 50%;
 }
 
 

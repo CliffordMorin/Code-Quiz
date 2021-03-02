@@ -18,18 +18,17 @@
     <main>
         <div class="container" id="home">
             <div class="home-container">
-                <h1>Javascript Quiz!</h1>
-                <h5><p>Try to answer these questions about Javascript in 120 seconds or less!</h5>
+                <h1 style="text-align: center">JAVASCRIPT QUIZ!</h1>
+                <h5>Try to answer these questions about Javascript in 120 seconds or less!</h5>
                     <b><i>NOTE:</i></b> <br>
                     <ul>
                         <li>If you answer incorrectly the background will turn red and you will lose 20 seconds off of the timer.</li>
                         <li>If answered correctly the background will change to green.</li>
                         <li>Hit "next" button for next question.</li>
                         <li>Once finished quiz, your remaining time will be your score.</li>
-                        <li>At end of quiz, submit your score to the high scores!</li>
-                        
+                        <li>At end of quiz, submit your score to the high scores!</li>   
                     </ul>
-                </p> <br>
+                <br>
                 <button type="button" id="start-btn" class="btn start-btn">START QUIZ</button>
             </div>
         </div>
@@ -52,16 +51,16 @@
 
         <!-- Finished Screen -->
         <div class="container hide" id="submit-score">
-            <div class="row justify-content-center">
-                <div>
-                    <h2>Finished!</h2>
-                    <p id="user-score"> </p>
-                    <form class="form-group">
-                        <label for="new-score">Enter your name: </label>
-                        <input type="text" id="userName">
-                        <button type="button" class="btn submitBtn">Submit High Score</button>
-                    </form>
-                </div>
+            <div>
+                <h2>Finished!</h2>
+                <span class="score">You're final score is: <span id="users-score">0</span></span>
+                <br>
+                <br>
+                <form class="form-group">
+                    <label for="new-score">Enter your name: </label>
+                    <input type="text" id="userName">
+                    <button type="button" class="btn submitBtn">Submit Score</button>
+                </form>
             </div>
         </div>
     </main>
