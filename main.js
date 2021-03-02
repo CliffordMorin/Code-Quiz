@@ -9,7 +9,7 @@ const timer = document.getElementById('timer')
 
 let timeLeft = 120
 let shuffledQuestions, currentQuestionIndex, timeInterval
-// let countRightAnswers = 0
+let countRightAnswers = 0
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -23,6 +23,7 @@ function startGame() {
   //shuffles questions randomly
   shuffledQuestions = questions.sort(() => Math.random() - .5) //shuffled questions = question array which is sorted by a random number. If sort is a negative or a positive number it sorts it differently but not randomly so we use Math.random which gives a number between 1 and 0. We subtract .5 from it to we can get a number that is less than zero or above zero 50% of the time. 
   currentQuestionIndex = 0
+  countRightAnswers = 0
   home.classList.add('hide')
   quiz.classList.remove('hide')
 
@@ -100,6 +101,11 @@ function selectAnswer(e) {
   } else {
       endGame(timeInterval)
   }
+  if (selectedButton.dataset = correct) { //counts correct answers and gives you 10 points for each correct
+      countRightAnswers+=10;
+  }
+  console.log(countRightAnswers);
+  document.getElementById('right-answers').innerHTML = countRightAnswers
 }
 
 //clears elements status and checks if it correct or wrong then changes the class based on that.
