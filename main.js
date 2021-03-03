@@ -1,5 +1,6 @@
 var startButton = document.getElementById('start-btn')
 var nextButton = document.getElementById('next-btn')
+var submitButton = document.getElementById('submitBtn')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const home = document.getElementById('home')  
@@ -8,14 +9,22 @@ const submitScore = document.getElementById('submit-score')
 const timer = document.getElementById('timer')
 
 let timeLeft = 120
-let shuffledQuestions, currentQuestionIndex, timeInterval
+let shuffledQuestions, currentQuestionIndex, timeInterval, userNameInput
 let countRightAnswers = 0
 
-startButton.addEventListener('click', startGame)
+//Event Listeners for main buttons
+startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
-})
+});
+submitButton.addEventListener("click", function(e) {
+    e.stopPropagation();
+    addScore();
+
+    window.location.href = './highscores.html'
+});
+
 
 //Start Game on click of Start btn
 function startGame() {
@@ -37,13 +46,14 @@ function startGame() {
 //Timer function. 
 function startTimer() {
     timeInterval = setInterval(() => {
-        if (timeLeft > 1) {
+        if (timeLeft > 0) {
             timer.textContent = timeLeft;
             timeLeft--;
-        } else if (timeLeft === 1) {
+        } else if (timeLeft === 0) {
             timer.textContent = timeLeft;
             timeLeft--;
-        } else {
+        } 
+        else {
             endGame(timeInterval)
         }
     }, 1000);
@@ -99,13 +109,15 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-      endGame(timeInterval)
+      endGame(timeInterval);
   }
   if (selectedButton.dataset = correct) { //counts correct answers and gives you 10 points for each correct
       countRightAnswers+=10;
   }
   console.log(countRightAnswers);
   document.getElementById('right-answers').innerHTML = countRightAnswers
+
+  
 }
 
 //clears elements status and checks if it correct or wrong then changes the class based on that.
@@ -128,4 +140,23 @@ function endGame(interval) {
     quiz.classList.add('hide')
     submitScore.classList.remove('hide')
     clearInterval(interval)
+}
+
+//submit score section
+function addScore () {
+    userNameInput = document.getElementById('userName').value.trim()
+
+//create a object with name and score
+    let newScore = {
+        name: userNameInput,
+        score: countRightAnswers
+    };
+    console.log(newScore);
+    // check if there are any scores in local storage first and take value
+    //if not, make a blank array
+    var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+    // push object into score array
+    highScores.push(newScore)
+    // turn objects into an array of strings + put it into local storage
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 }

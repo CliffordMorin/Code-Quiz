@@ -121,4 +121,17 @@ main.wrong {
     max-width: 50%;
 }
 
+/* High Scores page */
+
+#highscores {
+    width: 400px;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.info-container {
+    text-align: center;
+}
 

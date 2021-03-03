@@ -59,5 +59,24 @@ var questions = [
         ]
     },
 
+    {
+        question: 'We use __ to add an item to the end of an array.',
+        answers: [
+            { text: '.pop()', correct: false },
+            { text: '.slice()', correct: false },
+            { text: '.push()', correct: true },
+            { text: '.replace()', correct: false },
+        ]
+    },
+
+    {
+        question: 'We use __ to remove the last item of an array.',
+        answers: [
+            { text: '.pop()', correct: true },
+            { text: '.slice()', correct: false },
+            { text: '.push()', correct: false },
+            { text: '.replace()', correct: false },
+        ]
+    },
 
 ];
