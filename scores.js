@@ -20,6 +20,7 @@ let scoreList = document.getElementById("score-list");
  // click handlers for restart and clearing scoreboard
  clearBtn.addEventListener("click", function () {
      localStorage.clear();
+     window.location.reload();
  });
  restartBtn.addEventListener("click", function () {
      window.history.back();
