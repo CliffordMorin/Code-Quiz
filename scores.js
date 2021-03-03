@@ -23,5 +23,5 @@ let scoreList = document.getElementById("score-list");
      window.location.reload();
  });
  restartBtn.addEventListener("click", function () {
-     window.history.back();
+     window.history.back(-1);
  });

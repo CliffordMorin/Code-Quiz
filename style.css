@@ -24,7 +24,7 @@ header {
 /* Home card */
 #home {
     width: 500px;
-    max-width: 50%;
+    max-width: 80%;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
@@ -119,14 +119,14 @@ main.wrong {
 
 #submit-score {
     width: 500px;
-    max-width: 50%;
+    max-width: 80%;
 }
 
 /* High Scores page */
 
 #highscores {
     width: 400px;
-    max-width: 50%;
+    max-width: 80%;
     display: flex;
     justify-content: center;
     justify-items: center;
