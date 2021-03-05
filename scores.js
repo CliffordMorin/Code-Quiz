@@ -24,5 +24,4 @@ let scoreList = document.getElementById("score-list");
  });
  restartBtn.addEventListener("click", function () {
      location.href = "index.html"
-    //  window.history.back();
  });
